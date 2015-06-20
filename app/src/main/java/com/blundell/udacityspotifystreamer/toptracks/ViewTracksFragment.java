@@ -72,6 +72,13 @@ public class ViewTracksFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        if (getArtist() == null) {
+            return;
+        }
+        retrieveTracksForArtist();
+    }
+
+    private void retrieveTracksForArtist() {
         Map<String, Object> queryParams = Collections.singletonMap("country", (Object) "GB");
         spotifyService.getArtistTopTrack(getArtist().getId(), queryParams, onTracksFoundUpdateUi);
     }
@@ -100,7 +107,11 @@ public class ViewTracksFragment extends Fragment {
         toaster.display(message);
     }
 
-    interface Provider {
+    public void notifyArtistChanged() {
+        retrieveTracksForArtist();
+    }
+
+    public interface Provider {
         Artists.Artist provideArtist();
     }
 }
