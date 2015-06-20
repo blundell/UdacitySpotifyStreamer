@@ -1,6 +1,6 @@
 package com.blundell.udacityspotifystreamer.search;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,7 +13,6 @@ import android.widget.EditText;
 
 import com.blundell.udacityspotifystreamer.R;
 import com.blundell.udacityspotifystreamer.SpotifyApiBuilder;
-import com.blundell.udacityspotifystreamer.toptracks.ViewTracksActivity;
 import com.novoda.notils.logger.simple.Log;
 import com.novoda.notils.logger.toast.ToastDisplayer;
 import com.novoda.notils.logger.toast.ToastDisplayers;
@@ -27,12 +26,19 @@ import retrofit.client.Response;
 
 public class SearchArtistFragment extends Fragment {
 
+    private Listener listener;
     private ToastDisplayer toaster;
     private SpotifyService spotifyService;
     private ArtistsAdapter artistsAdapter;
 
     private RecyclerView artistResultsList;
     private EditText searchArtistInputBox;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        listener = (Listener) activity;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,8 +52,7 @@ public class SearchArtistFragment extends Fragment {
     private final ArtistsAdapter.Listener onArtistClickedViewTracks = new ArtistsAdapter.Listener() {
         @Override
         public void onClicked(Artists.Artist artist) {
-            Intent intent = ViewTracksActivity.createIntent(getActivity(), artist);
-            startActivity(intent);
+            listener.onClicked(artist);
         }
     };
 
@@ -103,5 +108,9 @@ public class SearchArtistFragment extends Fragment {
 
     private void popToast(int message) {
         toaster.display(message);
+    }
+
+    interface Listener {
+        void onClicked(Artists.Artist artist);
     }
 }
