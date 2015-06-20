@@ -1,4 +1,4 @@
-package com.blundell.udacityspotifystreamer;
+package com.blundell.udacityspotifystreamer.search;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -6,7 +6,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.blundell.udacityspotifystreamer.Artists.Artist;
+import com.blundell.udacityspotifystreamer.search.Artists.Artist;
+import com.blundell.udacityspotifystreamer.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

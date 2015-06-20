@@ -1,4 +1,4 @@
-package com.blundell.udacityspotifystreamer;
+package com.blundell.udacityspotifystreamer.toptracks;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.blundell.udacityspotifystreamer.R;
+import com.blundell.udacityspotifystreamer.SpotifyApiBuilder;
+import com.blundell.udacityspotifystreamer.search.Artists;
 import com.novoda.notils.logger.simple.Log;
 import com.novoda.notils.logger.toast.ToastDisplayer;
 import com.novoda.notils.logger.toast.ToastDisplayers;

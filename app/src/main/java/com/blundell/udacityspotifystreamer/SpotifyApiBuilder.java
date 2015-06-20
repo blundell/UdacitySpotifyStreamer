@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import kaaes.spotify.webapi.android.SpotifyApi;
 import retrofit.android.MainThreadExecutor;
 
-final class SpotifyApiBuilder {
+public final class SpotifyApiBuilder {
 
     private Executor executeExecutor;
     private Executor callbackExecutor;

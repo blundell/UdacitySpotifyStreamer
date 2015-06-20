@@ -1,9 +1,9 @@
-package com.blundell.udacityspotifystreamer;
+package com.blundell.udacityspotifystreamer.search;
 
 import android.text.Editable;
 import android.text.TextWatcher;
 
-public abstract class OnChangedTextWatcher implements TextWatcher {
+abstract class OnChangedTextWatcher implements TextWatcher {
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         // not used

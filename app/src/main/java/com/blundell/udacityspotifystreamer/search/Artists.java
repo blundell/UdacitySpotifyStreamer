@@ -1,4 +1,4 @@
-package com.blundell.udacityspotifystreamer;
+package com.blundell.udacityspotifystreamer.search;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 
 import kaaes.spotify.webapi.android.models.Image;
 
-class Artists implements Serializable {
+public class Artists implements Serializable {
 
     private final List<Artist> artists;
 
@@ -39,7 +39,7 @@ class Artists implements Serializable {
         return artists.size();
     }
 
-    static class Artist implements Serializable {
+    public static class Artist implements Serializable {
 
         private final String name;
         private final List<String> images;
