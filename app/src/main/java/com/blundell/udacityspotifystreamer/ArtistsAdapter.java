@@ -11,8 +11,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import kaaes.spotify.webapi.android.models.Image;
-
 class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ArtistViewHolder> {
 
     private final Artists artists;
@@ -68,11 +66,11 @@ class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ArtistViewHolde
             bindOnClick(artist, listener);
         }
 
-        private void bindArt(List<Image> art) {
+        private void bindArt(List<String> art) {
             if (art.isEmpty()) {
                 return;
             }
-            imageLoader.load(art.get(0).url).into(albumArtImage);
+            imageLoader.load(art.get(0)).into(albumArtImage);
         }
 
         private void bindText(String name) {

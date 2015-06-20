@@ -20,6 +20,10 @@ import retrofit.client.Response;
 
 public class SearchArtistActivity extends AppCompatActivity {
 
+    static { // Lazy mans custom application class
+        Log.setShowLogs(BuildConfig.DEBUG);
+    }
+
     private ArtistsAdapter artistsAdapter;
     private ToastDisplayer toaster;
     private SpotifyService spotifyService;
@@ -44,7 +48,7 @@ public class SearchArtistActivity extends AppCompatActivity {
     private final ArtistsAdapter.Listener onArtistClickedViewTracks = new ArtistsAdapter.Listener() {
         @Override
         public void onClicked(Artists.Artist artist) {
-            Intent intent = new Intent(SearchArtistActivity.this, ViewTracksActivity.class);
+            Intent intent = ViewTracksActivity.createIntent(SearchArtistActivity.this, artist);
             startActivity(intent);
         }
     };
@@ -62,7 +66,7 @@ public class SearchArtistActivity extends AppCompatActivity {
         @Override
         public void success(ArtistsPager artistsPager, Response response) {
             if (artistsPager.artists.items.isEmpty()) {
-                popToast(R.string.error_no_results);
+                popToast(R.string.error_no_artist_results);
             }
             artistsAdapter.setArtists(Artists.from(artistsPager.artists.items));
         }
