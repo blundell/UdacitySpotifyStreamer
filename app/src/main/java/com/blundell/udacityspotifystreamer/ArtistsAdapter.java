@@ -6,21 +6,25 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.blundell.udacityspotifystreamer.Artists.Artist;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import kaaes.spotify.webapi.android.models.Artist;
 import kaaes.spotify.webapi.android.models.Image;
 
 class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ArtistViewHolder> {
 
-    private final List<Artist> artists = new ArrayList<>();
+    private final Artists artists;
+    private final Listener listener;
 
-    public void setArtists(List<Artist> artists) {
-        this.artists.clear();
-        this.artists.addAll(artists);
+    public ArtistsAdapter(Listener listener) {
+        this.listener = listener;
+        this.artists = new Artists();
+    }
+
+    public void setArtists(Artists artists) {
+        this.artists.replaceAll(artists);
         notifyDataSetChanged();
     }
 
@@ -32,12 +36,17 @@ class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ArtistViewHolde
 
     @Override
     public int getItemCount() {
-        return artists.size();
+        return artists.total();
     }
 
     @Override
     public void onBindViewHolder(ArtistViewHolder artistViewHolder, int position) {
-        artistViewHolder.bind(artists.get(position));
+        Artist artist = artists.get(position);
+        artistViewHolder.bind(artist, listener);
+    }
+
+    interface Listener {
+        void onClicked(Artist artist);
     }
 
     static class ArtistViewHolder extends RecyclerView.ViewHolder {
@@ -53,9 +62,10 @@ class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ArtistViewHolde
             nameText = (TextView) itemView.findViewById(R.id.artist_text_name);
         }
 
-        public void bind(Artist artist) {
-            bindArt(artist.images);
-            nameText.setText(artist.name);
+        public void bind(final Artist artist, final Listener listener) {
+            bindArt(artist.getImages());
+            bindText(artist.getName());
+            bindOnClick(artist, listener);
         }
 
         private void bindArt(List<Image> art) {
@@ -64,5 +74,20 @@ class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ArtistViewHolde
             }
             imageLoader.load(art.get(0).url).into(albumArtImage);
         }
+
+        private void bindText(String name) {
+            nameText.setText(name);
+        }
+
+        private void bindOnClick(final Artist artist, final Listener listener) {
+            itemView.setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            listener.onClicked(artist);
+                        }
+                    });
+        }
+
     }
 }

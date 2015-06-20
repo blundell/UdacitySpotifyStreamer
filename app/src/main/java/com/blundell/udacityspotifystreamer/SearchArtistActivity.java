@@ -1,5 +1,6 @@
 package com.blundell.udacityspotifystreamer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -34,11 +35,19 @@ public class SearchArtistActivity extends AppCompatActivity {
         RecyclerView artistResultsList = (RecyclerView) findViewById(R.id.search_artist_list_results);
         artistResultsList.setHasFixedSize(true);
         artistResultsList.setLayoutManager(new LinearLayoutManager(this));
-        artistsAdapter = new ArtistsAdapter();
+        artistsAdapter = new ArtistsAdapter(onArtistClickedViewTracks);
         artistResultsList.setAdapter(artistsAdapter);
         EditText searchArtistInputBox = (EditText) findViewById(R.id.search_artist_box_input);
         searchArtistInputBox.addTextChangedListener(onChangedQueryApi);
     }
+
+    private final ArtistsAdapter.Listener onArtistClickedViewTracks = new ArtistsAdapter.Listener() {
+        @Override
+        public void onClicked(Artists.Artist artist) {
+            Intent intent = new Intent(SearchArtistActivity.this, ViewTracksActivity.class);
+            startActivity(intent);
+        }
+    };
 
     private final OnChangedTextWatcher onChangedQueryApi = new OnChangedTextWatcher() {
         @Override
@@ -55,7 +64,7 @@ public class SearchArtistActivity extends AppCompatActivity {
             if (artistsPager.artists.items.isEmpty()) {
                 popToast(R.string.error_no_results);
             }
-            artistsAdapter.setArtists(artistsPager.artists.items);
+            artistsAdapter.setArtists(Artists.from(artistsPager.artists.items));
         }
 
         @Override
