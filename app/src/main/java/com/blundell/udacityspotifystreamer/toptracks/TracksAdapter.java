@@ -7,26 +7,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.blundell.udacityspotifystreamer.R;
+import com.blundell.udacityspotifystreamer.toptracks.Trackz.Track;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import kaaes.spotify.webapi.android.models.Image;
-import kaaes.spotify.webapi.android.models.Track;
 
 class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.TracksViewHolder> {
 
-    private final List<Track> tracks = new ArrayList<>();
     private final Listener listener;
+    private final Trackz trackz;
 
     public TracksAdapter(Listener listener) {
         this.listener = listener;
+        this.trackz = new Trackz();
     }
 
-    public void setTracks(List<Track> tracks) {
-        this.tracks.clear();
-        this.tracks.addAll(tracks);
+    public void setTrackz(Trackz trackz) {
+        this.trackz.replaceAll(trackz);
         notifyDataSetChanged();
     }
 
@@ -38,13 +35,13 @@ class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.TracksViewHolder>
 
     @Override
     public void onBindViewHolder(TracksViewHolder holder, int position) {
-        Track track = tracks.get(position);
+        Track track = trackz.get(position);
         holder.bind(track, listener);
     }
 
     @Override
     public int getItemCount() {
-        return tracks.size();
+        return trackz.total();
     }
 
     public static class TracksViewHolder extends RecyclerView.ViewHolder {
@@ -63,17 +60,17 @@ class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.TracksViewHolder>
         }
 
         public void bind(Track track, Listener listener) {
-            bindArt(track.album.images);
-            albumNameText.setText(track.album.name);
-            nameText.setText(track.name);
+            bindArt(track.getAlbumArtUrls());
+            albumNameText.setText(track.getAlbumName());
+            nameText.setText(track.getName());
             bindOnClick(track, listener);
         }
 
-        private void bindArt(List<Image> images) {
+        private void bindArt(List<String> images) {
             if (images.isEmpty()) {
                 return;
             }
-            imageLoader.load(images.get(0).url).into(trackAlbumArtImage);
+            imageLoader.load(images.get(0)).into(trackAlbumArtImage);
         }
 
         private void bindOnClick(final Track track, final Listener listener) {

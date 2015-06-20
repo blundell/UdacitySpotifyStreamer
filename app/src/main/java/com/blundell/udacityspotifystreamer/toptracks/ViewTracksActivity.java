@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.blundell.udacityspotifystreamer.R;
+import com.blundell.udacityspotifystreamer.player.PlayerActivity;
 import com.blundell.udacityspotifystreamer.search.Artists;
 
-public class ViewTracksActivity extends AppCompatActivity implements ViewTracksFragment.Provider {
+import static com.blundell.udacityspotifystreamer.toptracks.Trackz.Track;
+
+public class ViewTracksActivity extends AppCompatActivity implements ViewTracksFragment.Listener, ViewTracksFragment.Provider {
 
     private static final String EXTRA_ARTIST = "com.blundell.udacityspotifystreamer.EXTRA_ARTIST";
 
@@ -33,5 +36,11 @@ public class ViewTracksActivity extends AppCompatActivity implements ViewTracksF
     @Override
     public Artists.Artist provideArtist() {
         return artist;
+    }
+
+    @Override
+    public void onClicked(Track track) {
+        Intent intent = PlayerActivity.createIntent(this, track);
+        startActivity(intent);
     }
 }

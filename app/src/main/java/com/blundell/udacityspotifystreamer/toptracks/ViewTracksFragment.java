@@ -24,7 +24,6 @@ import kaaes.spotify.webapi.android.SpotifyApi;
 import kaaes.spotify.webapi.android.SpotifyCallback;
 import kaaes.spotify.webapi.android.SpotifyError;
 import kaaes.spotify.webapi.android.SpotifyService;
-import kaaes.spotify.webapi.android.models.Track;
 import kaaes.spotify.webapi.android.models.Tracks;
 import retrofit.client.Response;
 
@@ -56,7 +55,7 @@ public class ViewTracksFragment extends Fragment {
 
     private final TracksAdapter.Listener onTrackClickedPlayMedia = new TracksAdapter.Listener() {
         @Override
-        public void onClicked(Track track) {
+        public void onClicked(Trackz.Track track) {
             listener.onClicked(track);
         }
     };
@@ -103,7 +102,7 @@ public class ViewTracksFragment extends Fragment {
             if (tracks.tracks.isEmpty()) {
                 popToast(R.string.error_no_track_results);
             }
-            tracksAdapter.setTracks(tracks.tracks);
+            tracksAdapter.setTrackz(Trackz.from(tracks.tracks));
         }
 
         @Override
@@ -126,6 +125,6 @@ public class ViewTracksFragment extends Fragment {
     }
 
     public interface Listener {
-        void onClicked(Track track);
+        void onClicked(Trackz.Track track);
     }
 }

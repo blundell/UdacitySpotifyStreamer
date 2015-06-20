@@ -11,7 +11,7 @@ import com.blundell.udacityspotifystreamer.toptracks.ViewTracksActivity;
 import com.blundell.udacityspotifystreamer.toptracks.ViewTracksFragment;
 import com.novoda.notils.logger.simple.Log;
 
-import kaaes.spotify.webapi.android.models.Track;
+import static com.blundell.udacityspotifystreamer.toptracks.Trackz.Track;
 
 public class SearchArtistActivity extends AppCompatActivity
         implements SearchArtistFragment.Listener,
@@ -48,7 +48,8 @@ public class SearchArtistActivity extends AppCompatActivity
 
     @Override
     public void onClicked(Track track) {
-        Intent intent = new Intent(this, PlayerActivity.class);
+        Intent intent = PlayerActivity.createIntent(this, track);
         startActivity(intent);
     }
+
 }
