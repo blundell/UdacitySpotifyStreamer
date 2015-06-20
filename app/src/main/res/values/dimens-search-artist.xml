@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="artist_image_album_art_dimen">75dip</dimen>
+</resources>

@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:gravity="center_vertical"
   android:orientation="horizontal">
 
   <ImageView
     android:id="@+id/artist_image_album_art"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:contentDescription="@null" />
+    android:layout_width="@dimen/artist_image_album_art_dimen"
+    android:layout_height="@dimen/artist_image_album_art_dimen"
+    android:contentDescription="@null"
+    tools:src="@android:drawable/ic_media_play" />
 
   <TextView
     android:id="@+id/artist_text_name"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:text="Foo Fighters" />
 
 </LinearLayout>

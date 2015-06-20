@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="search_hint">@string/artist</string>
+  <string name="fubar_error_message">@string/sorry_it_went_pete_tongue</string>
+  <string name="error_no_results">@string/no_artists_found_who_even_listens_to_that_genre</string>
 </resources>
