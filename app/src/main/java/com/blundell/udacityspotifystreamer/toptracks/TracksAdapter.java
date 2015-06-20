@@ -18,6 +18,11 @@ import kaaes.spotify.webapi.android.models.Track;
 class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.TracksViewHolder> {
 
     private final List<Track> tracks = new ArrayList<>();
+    private final Listener listener;
+
+    public TracksAdapter(Listener listener) {
+        this.listener = listener;
+    }
 
     public void setTracks(List<Track> tracks) {
         this.tracks.clear();
@@ -34,7 +39,7 @@ class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.TracksViewHolder>
     @Override
     public void onBindViewHolder(TracksViewHolder holder, int position) {
         Track track = tracks.get(position);
-        holder.bind(track);
+        holder.bind(track, listener);
     }
 
     @Override
@@ -57,10 +62,11 @@ class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.TracksViewHolder>
             nameText = (TextView) itemView.findViewById(R.id.track_text_name);
         }
 
-        public void bind(Track track) {
+        public void bind(Track track, Listener listener) {
             bindArt(track.album.images);
             albumNameText.setText(track.album.name);
             nameText.setText(track.name);
+            bindOnClick(track, listener);
         }
 
         private void bindArt(List<Image> images) {
@@ -69,5 +75,19 @@ class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.TracksViewHolder>
             }
             imageLoader.load(images.get(0).url).into(trackAlbumArtImage);
         }
+
+        private void bindOnClick(final Track track, final Listener listener) {
+            itemView.setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            listener.onClicked(track);
+                        }
+                    });
+        }
+    }
+
+    interface Listener {
+        void onClicked(Track track);
     }
 }

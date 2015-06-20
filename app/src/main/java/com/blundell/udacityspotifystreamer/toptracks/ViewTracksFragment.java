@@ -24,6 +24,7 @@ import kaaes.spotify.webapi.android.SpotifyApi;
 import kaaes.spotify.webapi.android.SpotifyCallback;
 import kaaes.spotify.webapi.android.SpotifyError;
 import kaaes.spotify.webapi.android.SpotifyService;
+import kaaes.spotify.webapi.android.models.Track;
 import kaaes.spotify.webapi.android.models.Tracks;
 import retrofit.client.Response;
 
@@ -35,21 +36,30 @@ public class ViewTracksFragment extends Fragment {
     private SpotifyService spotifyService;
 
     private RecyclerView tracksResultsList;
+    private Listener listener;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         provider = (Provider) activity;
+        listener = (Listener) activity;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         toaster = ToastDisplayers.noPendingToastsToastDisplayer(getActivity());
-        tracksAdapter = new TracksAdapter();
+        tracksAdapter = new TracksAdapter(onTrackClickedPlayMedia);
         SpotifyApi spotifyApi = new SpotifyApiBuilder().executeOnBackgroundThread().callbackOnMainThread().create();
         spotifyService = spotifyApi.getService();
     }
+
+    private final TracksAdapter.Listener onTrackClickedPlayMedia = new TracksAdapter.Listener() {
+        @Override
+        public void onClicked(Track track) {
+            listener.onClicked(track);
+        }
+    };
 
     @Nullable
     @Override
@@ -113,5 +123,9 @@ public class ViewTracksFragment extends Fragment {
 
     public interface Provider {
         Artists.Artist provideArtist();
+    }
+
+    public interface Listener {
+        void onClicked(Track track);
     }
 }

@@ -6,11 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.blundell.udacityspotifystreamer.BuildConfig;
 import com.blundell.udacityspotifystreamer.R;
+import com.blundell.udacityspotifystreamer.player.PlayerActivity;
 import com.blundell.udacityspotifystreamer.toptracks.ViewTracksActivity;
 import com.blundell.udacityspotifystreamer.toptracks.ViewTracksFragment;
 import com.novoda.notils.logger.simple.Log;
 
-public class SearchArtistActivity extends AppCompatActivity implements SearchArtistFragment.Listener, ViewTracksFragment.Provider {
+import kaaes.spotify.webapi.android.models.Track;
+
+public class SearchArtistActivity extends AppCompatActivity
+        implements SearchArtistFragment.Listener,
+        ViewTracksFragment.Listener, ViewTracksFragment.Provider {
 
     static { // Lazy mans custom application class
         Log.setShowLogs(BuildConfig.DEBUG);
@@ -39,5 +44,11 @@ public class SearchArtistActivity extends AppCompatActivity implements SearchArt
     @Override
     public Artists.Artist provideArtist() {
         return artist;
+    }
+
+    @Override
+    public void onClicked(Track track) {
+        Intent intent = new Intent(this, PlayerActivity.class);
+        startActivity(intent);
     }
 }

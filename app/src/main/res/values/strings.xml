@@ -4,6 +4,7 @@
   <string name="artist">Artist</string>
 
   <string name="label_view_tracks">Tracks</string>
+  <string name="label_play_track">@string/app_name</string>
   <string name="sorry_it_went_pete_tongue">Sorry it went pete tongue.</string>
   <string name="no_artists_found_who_even_listens_to_that_genre">No artists found, who even listens to that genre.</string>
   <string name="no_top_tracks_for_this_artist">No top tracks for this artist.</string>

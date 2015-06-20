@@ -27,6 +27,10 @@
       android:name=".toptracks.ViewTracksActivity"
       android:label="@string/label_view_tracks" />
 
+    <activity
+      android:name=".player.PlayerActivity"
+      android:label="@string/label_play_track" />
+
   </application>
 
 </manifest>
