@@ -29,8 +29,9 @@ public class SearchArtistFragment extends Fragment {
 
     private ToastDisplayer toaster;
     private SpotifyService spotifyService;
-    private RecyclerView artistResultsList;
     private ArtistsAdapter artistsAdapter;
+
+    private RecyclerView artistResultsList;
     private EditText searchArtistInputBox;
 
     @Override
