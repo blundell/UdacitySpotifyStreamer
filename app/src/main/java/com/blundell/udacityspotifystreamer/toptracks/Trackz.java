@@ -3,6 +3,7 @@ package com.blundell.udacityspotifystreamer.toptracks;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import kaaes.spotify.webapi.android.models.Image;
 
@@ -42,6 +43,8 @@ public class Trackz {
     public static class Track implements Serializable {
 
         private final String name;
+        private final Duration duration;
+        private final String artistName;
         private final String albumName;
         private final List<String> albumArtUrls;
 
@@ -52,11 +55,15 @@ public class Trackz {
             for (Image image : track.album.images) {
                 albumArtUrls.add(image.url);
             }
-            return new Track(name, albumName, albumArtUrls);
+            String artistName = track.artists.toString();
+            Duration duration = new Duration(track.duration_ms);
+            return new Track(name, duration, artistName, albumName, albumArtUrls);
         }
 
-        public Track(String name, String albumName, List<String> albumArtUrls) {
+        public Track(String name, Duration duration, String artistName, String albumName, List<String> albumArtUrls) {
             this.name = name;
+            this.duration = duration;
+            this.artistName = artistName;
             this.albumName = albumName;
             this.albumArtUrls = albumArtUrls;
         }
@@ -65,12 +72,38 @@ public class Trackz {
             return name;
         }
 
+        public String getArtistName() {
+            return artistName;
+        }
+
         public String getAlbumName() {
             return albumName;
         }
 
         public List<String> getAlbumArtUrls() {
             return albumArtUrls;
+        }
+
+        public Duration getDuration() {
+            return duration;
+        }
+    }
+
+    public static class Duration {
+        private final long durationMillis;
+
+        public Duration(long durationMillis) {
+            this.durationMillis = durationMillis;
+        }
+
+        public int toApproximateMillis() {
+            return (int) durationMillis;
+        }
+
+        public String asMmSs() {
+            long minutes = TimeUnit.MILLISECONDS.toMinutes(durationMillis); // TODO wrong over 60secs
+            long seconds = TimeUnit.MILLISECONDS.toSeconds(durationMillis); // & prob wrong place
+            return minutes + ":" + seconds;
         }
     }
 }
