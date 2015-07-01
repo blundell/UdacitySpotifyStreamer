@@ -72,6 +72,16 @@ public class PlayerFragment extends DialogFragment {
     }
 
     @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        if (savedInstanceState == null) {
+            return;
+        }
+        trackPlayButton.setVisibility(savedInstanceState.getBoolean("PLAY_BUTTON_VISIBLE") ? View.VISIBLE : View.GONE);
+        trackPauseButton.setVisibility(savedInstanceState.getBoolean("PAUSE_BUTTON_VISIBLE") ? View.VISIBLE : View.GONE);
+    }
+
+    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Track track = getTrackArg();
@@ -125,5 +135,12 @@ public class PlayerFragment extends DialogFragment {
 
     private Track getTrackArg() {
         return (Track) getArguments().getSerializable(ARG_TRACK);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("PLAY_BUTTON_VISIBLE", trackPlayButton.getVisibility() == View.VISIBLE);
+        outState.putBoolean("PAUSE_BUTTON_VISIBLE", trackPauseButton.getVisibility() == View.VISIBLE);
     }
 }
