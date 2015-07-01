@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.blundell.udacityspotifystreamer.BuildConfig;
 import com.blundell.udacityspotifystreamer.R;
 import com.blundell.udacityspotifystreamer.player.PlayerActivity;
+import com.blundell.udacityspotifystreamer.player.PlayerFragment;
 import com.blundell.udacityspotifystreamer.toptracks.ViewTracksActivity;
 import com.blundell.udacityspotifystreamer.toptracks.ViewTracksFragment;
 import com.novoda.notils.logger.simple.Log;
@@ -16,6 +17,8 @@ import static com.blundell.udacityspotifystreamer.toptracks.Trackz.Track;
 public class SearchArtistActivity extends AppCompatActivity
         implements SearchArtistFragment.Listener,
         ViewTracksFragment.Listener, ViewTracksFragment.Provider {
+
+    private static final String TAG_PLAYER_FRAGMENT = "TAG.PlayerFragment";
 
     static { // Lazy mans custom application class
         Log.setShowLogs(BuildConfig.DEBUG);
@@ -48,8 +51,13 @@ public class SearchArtistActivity extends AppCompatActivity
 
     @Override
     public void onClicked(Track track) {
-        Intent intent = PlayerActivity.createIntent(this, track);
-        startActivity(intent);
+        if (getResources().getBoolean(R.bool.isTablet)) {
+            PlayerFragment playerFragment = PlayerFragment.newInstance(track);
+            playerFragment.show(getSupportFragmentManager(), TAG_PLAYER_FRAGMENT);
+        } else {
+            Intent intent = PlayerActivity.createIntent(this, track);
+            startActivity(intent);
+        }
     }
 
 }
