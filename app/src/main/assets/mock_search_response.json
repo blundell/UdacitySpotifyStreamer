@@ -1,0 +1,500 @@
+{
+  artists: {
+    href: "https://api.spotify.com/v1/search?query=foo&offset=0&limit=20&type=artist",
+    items: [
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/7jy3rLJdDQY21OgRLCZ9sD"
+        },
+        followers: {
+          href: null,
+          total: 1421566
+        },
+        genres: [
+          "alternative rock",
+          "permanent wave",
+          "post-grunge"
+        ],
+        href: "https://api.spotify.com/v1/artists/7jy3rLJdDQY21OgRLCZ9sD",
+        id: "7jy3rLJdDQY21OgRLCZ9sD",
+        images: [
+          {
+            height: 467,
+            url: "https://i.scdn.co/image/21b6fe90c3125dc293d53ca2a67d54d8ed9c4c5e",
+            width: 583
+          },
+          {
+            height: 160,
+            url: "https://i.scdn.co/image/5ce1d91816f8c7b2b4ac70cacc25c73ba330ab79",
+            width: 200
+          },
+          {
+            height: 51,
+            url: "https://i.scdn.co/image/2a65e02dc861340635db8edcb28c052bc2a5614b",
+            width: 64
+          }
+        ],
+        name: "Foo Fighters",
+        popularity: 86,
+        type: "artist",
+        uri: "spotify:artist:7jy3rLJdDQY21OgRLCZ9sD"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/2TNOr8MZ3zzjKxg4pgQpgR"
+        },
+        followers: {
+          href: null,
+          total: 69
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/2TNOr8MZ3zzjKxg4pgQpgR",
+        id: "2TNOr8MZ3zzjKxg4pgQpgR",
+        images: [
+          {
+            height: 640,
+            url: "https://i.scdn.co/image/c15da49b220904cc463598585f801a5f9e346928",
+            width: 605
+          },
+          {
+            height: 300,
+            url: "https://i.scdn.co/image/ff665ebade02232e527ac4bae923eb2b891fc18a",
+            width: 284
+          },
+          {
+            height: 64,
+            url: "https://i.scdn.co/image/02cc0e52277c1ec13dc8df85e327584a2f51ca5f",
+            width: 61
+          }
+        ],
+        name: "Foo",
+        popularity: 5,
+        type: "artist",
+        uri: "spotify:artist:2TNOr8MZ3zzjKxg4pgQpgR"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/56Wmh9eMsfG5AN1Nrun5Wh"
+        },
+        followers: {
+          href: null,
+          total: 3
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/56Wmh9eMsfG5AN1Nrun5Wh",
+        id: "56Wmh9eMsfG5AN1Nrun5Wh",
+        images: [],
+        name: "Foo Foo",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:56Wmh9eMsfG5AN1Nrun5Wh"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/08h0HmFljdjnIXpaARHbgu"
+        },
+        followers: {
+          href: null,
+          total: 0
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/08h0HmFljdjnIXpaARHbgu",
+        id: "08h0HmFljdjnIXpaARHbgu",
+        images: [
+          {
+            height: 640,
+            url: "https://i.scdn.co/image/fb3d8713d96e409b8e1d25da72086c4c5a34aff6",
+            width: 640
+          },
+          {
+            height: 300,
+            url: "https://i.scdn.co/image/0363d609336a21fe926a28ce2f93f2d0ae9fcc56",
+            width: 300
+          },
+          {
+            height: 64,
+            url: "https://i.scdn.co/image/9446a9d649e4cb17ab89d8f73c1665a44346318d",
+            width: 64
+          }
+        ],
+        name: "Foo Foo Click",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:08h0HmFljdjnIXpaARHbgu"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/2CCZR6EH3pNDapqRxpuQZG"
+        },
+        followers: {
+          href: null,
+          total: 1
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/2CCZR6EH3pNDapqRxpuQZG",
+        id: "2CCZR6EH3pNDapqRxpuQZG",
+        images: [
+          {
+            height: 640,
+            url: "https://i.scdn.co/image/5b4247a800755e1f6a3ecb5168a96413372f97e2",
+            width: 640
+          },
+          {
+            height: 300,
+            url: "https://i.scdn.co/image/9b2d48b1bd58e75bd3b3abbcd75a57bd62fdabd1",
+            width: 300
+          },
+          {
+            height: 64,
+            url: "https://i.scdn.co/image/828a6a46846813d7629d12f7ec69c42787420ca3",
+            width: 64
+          }
+        ],
+        name: "The Foo Foo Band",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:2CCZR6EH3pNDapqRxpuQZG"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/68X7EQtVYHuUAYoFilK3wE"
+        },
+        followers: {
+          href: null,
+          total: 2057
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/68X7EQtVYHuUAYoFilK3wE",
+        id: "68X7EQtVYHuUAYoFilK3wE",
+        images: [
+          {
+            height: 640,
+            url: "https://i.scdn.co/image/ddbc97768e435e44833239b6a6571f5da4d6736b",
+            width: 640
+          },
+          {
+            height: 300,
+            url: "https://i.scdn.co/image/99ae7bea216637e912f337a49657510a7383f950",
+            width: 300
+          },
+          {
+            height: 64,
+            url: "https://i.scdn.co/image/6d3ff1d7bbd281d3c369d8d44b0f6f04a96e5939",
+            width: 64
+          }
+        ],
+        name: "Kommil Foo",
+        popularity: 33,
+        type: "artist",
+        uri: "spotify:artist:68X7EQtVYHuUAYoFilK3wE"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/7qiLrKoGb00lbCSBkJGKoU"
+        },
+        followers: {
+          href: null,
+          total: 2
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/7qiLrKoGb00lbCSBkJGKoU",
+        id: "7qiLrKoGb00lbCSBkJGKoU",
+        images: [
+          {
+            height: 640,
+            url: "https://i.scdn.co/image/fe6496582ea244d3bc0f666200d53664be549e2f",
+            width: 639
+          },
+          {
+            height: 300,
+            url: "https://i.scdn.co/image/8ccc5a9427512a13865397a1b3f82575cdd51a07",
+            width: 300
+          },
+          {
+            height: 64,
+            url: "https://i.scdn.co/image/1f5a440bc49fdcf9e9b1319f612e3292f9facaa8",
+            width: 64
+          }
+        ],
+        name: "Francisco Foo",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:7qiLrKoGb00lbCSBkJGKoU"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/6iEinlrmGT9lMfK0DujCbT"
+        },
+        followers: {
+          href: null,
+          total: 1
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/6iEinlrmGT9lMfK0DujCbT",
+        id: "6iEinlrmGT9lMfK0DujCbT",
+        images: [],
+        name: "Kung Foo",
+        popularity: 1,
+        type: "artist",
+        uri: "spotify:artist:6iEinlrmGT9lMfK0DujCbT"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/6AcNCnxChWevoeQ3RCNNXV"
+        },
+        followers: {
+          href: null,
+          total: 0
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/6AcNCnxChWevoeQ3RCNNXV",
+        id: "6AcNCnxChWevoeQ3RCNNXV",
+        images: [],
+        name: "Alley Foo",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:6AcNCnxChWevoeQ3RCNNXV"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/3cKNTokaE0pqLjn8aRPx7z"
+        },
+        followers: {
+          href: null,
+          total: 0
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/3cKNTokaE0pqLjn8aRPx7z",
+        id: "3cKNTokaE0pqLjn8aRPx7z",
+        images: [
+          {
+            height: 640,
+            url: "https://i.scdn.co/image/f3c9a3f42152912935d82c286416152da52924c3",
+            width: 640
+          },
+          {
+            height: 300,
+            url: "https://i.scdn.co/image/9b6c76c858e6fa0d4023ce4d42adfcde4f22edc5",
+            width: 300
+          },
+          {
+            height: 64,
+            url: "https://i.scdn.co/image/c561de923fd575ba5a20f22ff5f699aa37e9da32",
+            width: 64
+          }
+        ],
+        name: "Foo Ensemble",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:3cKNTokaE0pqLjn8aRPx7z"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/50n1Ur4QWBlteiNGZ2LDg0"
+        },
+        followers: {
+          href: null,
+          total: 0
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/50n1Ur4QWBlteiNGZ2LDg0",
+        id: "50n1Ur4QWBlteiNGZ2LDg0",
+        images: [],
+        name: "Edu Foo",
+        popularity: 2,
+        type: "artist",
+        uri: "spotify:artist:50n1Ur4QWBlteiNGZ2LDg0"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/65DGrC8NRyk1aJ8wKFxwX0"
+        },
+        followers: {
+          href: null,
+          total: 64
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/65DGrC8NRyk1aJ8wKFxwX0",
+        id: "65DGrC8NRyk1aJ8wKFxwX0",
+        images: [],
+        name: "Red Foo",
+        popularity: 1,
+        type: "artist",
+        uri: "spotify:artist:65DGrC8NRyk1aJ8wKFxwX0"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/2wMaMD3sR58wd26tbDDHhu"
+        },
+        followers: {
+          href: null,
+          total: 1
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/2wMaMD3sR58wd26tbDDHhu",
+        id: "2wMaMD3sR58wd26tbDDHhu",
+        images: [
+          {
+            height: 640,
+            url: "https://i.scdn.co/image/baf0ec85d10fef700c575cc948e8f8a322624fec",
+            width: 640
+          },
+          {
+            height: 300,
+            url: "https://i.scdn.co/image/8bbfb681292cbf6c7ec35413575db09b45ee1d72",
+            width: 300
+          },
+          {
+            height: 64,
+            url: "https://i.scdn.co/image/88c5507a1bbd7401523a35d70bf5df71a483bb40",
+            width: 64
+          }
+        ],
+        name: "Ha-Foo",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:2wMaMD3sR58wd26tbDDHhu"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/3C1Hh05M8jHohaNCGgmv0o"
+        },
+        followers: {
+          href: null,
+          total: 9
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/3C1Hh05M8jHohaNCGgmv0o",
+        id: "3C1Hh05M8jHohaNCGgmv0o",
+        images: [],
+        name: "Sharin Foo",
+        popularity: 4,
+        type: "artist",
+        uri: "spotify:artist:3C1Hh05M8jHohaNCGgmv0o"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/5L5TRwfvpNrIXA980NLXF8"
+        },
+        followers: {
+          href: null,
+          total: 1
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/5L5TRwfvpNrIXA980NLXF8",
+        id: "5L5TRwfvpNrIXA980NLXF8",
+        images: [
+          {
+            height: 640,
+            url: "https://i.scdn.co/image/a832dc6c9072362782be900a2b57f041ef34a6fe",
+            width: 640
+          },
+          {
+            height: 300,
+            url: "https://i.scdn.co/image/66e0de889c0ccca2819d7ac85e69007ca4387890",
+            width: 300
+          },
+          {
+            height: 64,
+            url: "https://i.scdn.co/image/4ed42a4a36437ae872585399a0f76566c00fa74c",
+            width: 64
+          }
+        ],
+        name: "Matthew Foo",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:5L5TRwfvpNrIXA980NLXF8"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/7r8kO7DDfDR8Upg5gmmJb4"
+        },
+        followers: {
+          href: null,
+          total: 0
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/7r8kO7DDfDR8Upg5gmmJb4",
+        id: "7r8kO7DDfDR8Upg5gmmJb4",
+        images: [],
+        name: "Abby Foo",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:7r8kO7DDfDR8Upg5gmmJb4"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/3126DMFQwxlrDA6EJtRlFF"
+        },
+        followers: {
+          href: null,
+          total: 0
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/3126DMFQwxlrDA6EJtRlFF",
+        id: "3126DMFQwxlrDA6EJtRlFF",
+        images: [],
+        name: "Meeia Foo",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:3126DMFQwxlrDA6EJtRlFF"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/4s1krM5A1BNpHPoS2NFxXp"
+        },
+        followers: {
+          href: null,
+          total: 1
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/4s1krM5A1BNpHPoS2NFxXp",
+        id: "4s1krM5A1BNpHPoS2NFxXp",
+        images: [],
+        name: "Eduardo Foo",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:4s1krM5A1BNpHPoS2NFxXp"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/0N9gZqw4IoUm7sT6kKfv2T"
+        },
+        followers: {
+          href: null,
+          total: 0
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/0N9gZqw4IoUm7sT6kKfv2T",
+        id: "0N9gZqw4IoUm7sT6kKfv2T",
+        images: [],
+        name: "Foo Man",
+        popularity: 0,
+        type: "artist",
+        uri: "spotify:artist:0N9gZqw4IoUm7sT6kKfv2T"
+      },
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/2G7eeVkblRkxwX14GbsTOa"
+        },
+        followers: {
+          href: null,
+          total: 1
+        },
+        genres: [],
+        href: "https://api.spotify.com/v1/artists/2G7eeVkblRkxwX14GbsTOa",
+        id: "2G7eeVkblRkxwX14GbsTOa",
+        images: [],
+        name: "Foo Fanik",
+        popularity: 5,
+        type: "artist",
+        uri: "spotify:artist:2G7eeVkblRkxwX14GbsTOa"
+      }
+    ],
+    limit: 20,
+    next: "https://api.spotify.com/v1/search?query=foo&offset=20&limit=20&type=artist",
+    offset: 0,
+    previous: null,
+    total: 47
+  }
+}
