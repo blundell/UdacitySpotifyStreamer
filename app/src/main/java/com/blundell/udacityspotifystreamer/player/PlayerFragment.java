@@ -20,6 +20,8 @@ import java.util.List;
 public class PlayerFragment extends DialogFragment {
 
     private static final String ARG_TRACK = "com.blundell.udacityspotifystreamer.player.ARG_TRACK";
+    private static final String KEY_STATE_PLAY_BUTTON_VISIBLE = "com.blundell.udacityspotifystreamer.player.key.PLAY_BUTTON_VISIBLE";
+    private static final String KEY_STATE_PAUSE_BUTTON_VISIBLE = "com.blundell.udacityspotifystreamer.player.key.PAUSE_BUTTON_VISIBLE";
 
     private TextView artistNameLabel;
     private TextView trackNameLabel;
@@ -77,8 +79,8 @@ public class PlayerFragment extends DialogFragment {
         if (savedInstanceState == null) {
             return;
         }
-        trackPlayButton.setVisibility(savedInstanceState.getBoolean("PLAY_BUTTON_VISIBLE") ? View.VISIBLE : View.GONE);
-        trackPauseButton.setVisibility(savedInstanceState.getBoolean("PAUSE_BUTTON_VISIBLE") ? View.VISIBLE : View.GONE);
+        trackPlayButton.setVisibility(savedInstanceState.getBoolean(KEY_STATE_PLAY_BUTTON_VISIBLE) ? View.VISIBLE : View.GONE);
+        trackPauseButton.setVisibility(savedInstanceState.getBoolean(KEY_STATE_PAUSE_BUTTON_VISIBLE) ? View.VISIBLE : View.GONE);
     }
 
     @Override
@@ -151,7 +153,7 @@ public class PlayerFragment extends DialogFragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putBoolean("PLAY_BUTTON_VISIBLE", trackPlayButton.getVisibility() == View.VISIBLE);
-        outState.putBoolean("PAUSE_BUTTON_VISIBLE", trackPauseButton.getVisibility() == View.VISIBLE);
+        outState.putBoolean(KEY_STATE_PLAY_BUTTON_VISIBLE, trackPlayButton.getVisibility() == View.VISIBLE);
+        outState.putBoolean(KEY_STATE_PAUSE_BUTTON_VISIBLE, trackPauseButton.getVisibility() == View.VISIBLE);
     }
 }
