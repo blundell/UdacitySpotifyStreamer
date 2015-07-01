@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="player_content_desc_previous">@string/previous</string>
+  <string name="player_content_desc_next">@string/next</string>
+  <string name="player_content_desc_play">@string/play</string>
+  <string name="player_content_desc_pause">@string/pause</string>
+</resources>

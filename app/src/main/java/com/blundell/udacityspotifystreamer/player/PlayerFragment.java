@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.blundell.udacityspotifystreamer.R;
 import com.blundell.udacityspotifystreamer.toptracks.Trackz.Track;
@@ -35,24 +34,19 @@ public class PlayerFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_player, container, false);
 
-        artistLabel = (TextView) root.findViewById(R.id.player_label_artist);
+        artistLabel = (TextView) root.findViewById(R.id.player_text_artist);
 
         return root;
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        Toast.makeText(getActivity(), "Track: " + getTrackArg().getName(), Toast.LENGTH_SHORT).show();
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Track track = getTrackArg();
+        artistLabel.setText(track.getName());
     }
 
     private Track getTrackArg() {
         return (Track) getArguments().getSerializable(ARG_TRACK);
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        artistLabel.setText("TODO");
     }
 }

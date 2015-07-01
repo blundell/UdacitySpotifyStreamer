@@ -8,4 +8,8 @@
   <string name="sorry_it_went_pete_tongue">Sorry it went pete tongue.</string>
   <string name="no_artists_found_who_even_listens_to_that_genre">No artists found, who even listens to that genre.</string>
   <string name="no_top_tracks_for_this_artist">No top tracks for this artist.</string>
+  <string name="previous">previous</string>
+  <string name="next">next</string>
+  <string name="play">play</string>
+  <string name="pause">pause</string>
 </resources>

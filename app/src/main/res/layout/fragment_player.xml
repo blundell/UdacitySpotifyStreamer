@@ -1,12 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:gravity="center"
   android:orientation="vertical">
 
   <TextView
-    android:id="@+id/player_label_artist"
+    android:id="@+id/player_text_artist"
     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="Michael Buble" />
+
+  <TextView
+    android:id="@+id/player_text_album"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="to be loved" />
+
+  <ImageView
+    android:id="@+id/player_image_album_art"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@null"
+    tools:src="@android:drawable/sym_def_app_icon" />
+
+  <TextView
+    android:id="@+id/player_text_track"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="It's a beautiful day" />
+
+  <ProgressBar
+    android:id="@+id/player_progress_track_duration"
+    style="@android:style/Widget.ProgressBar.Horizontal"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content" />
+
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+      android:id="@+id/player_text_time_position"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      tools:text="0:00" />
+
+    <ImageButton
+      android:id="@+id/player_button_previous"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:contentDescription="@string/player_content_desc_previous"
+      android:src="@android:drawable/ic_media_previous" />
+
+    <ImageButton
+      android:id="@+id/player_button_play"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:contentDescription="@string/player_content_desc_play"
+      android:src="@android:drawable/ic_media_play" />
+
+    <ImageButton
+      android:id="@+id/player_button_pause"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:contentDescription="@string/player_content_desc_pause"
+      android:src="@android:drawable/ic_media_pause"
+      android:visibility="gone" />
+
+    <ImageButton
+      android:id="@+id/player_button_next"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:contentDescription="@string/player_content_desc_next"
+      android:src="@android:drawable/ic_media_next" />
+
+    <TextView
+      android:id="@+id/player_text_time_remaining"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      tools:text="0:30" />
+
+  </LinearLayout>
 
 </LinearLayout>
