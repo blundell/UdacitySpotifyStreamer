@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,9 +26,9 @@ public class PlayerFragment extends DialogFragment {
     private TextView albumnNameLabel;
     private ImageView trackAlbumArtImage;
     private Picasso imageLoader;
-    private ProgressBar trackDurationBar;
+    private SeekBar trackDurationBar;
     private TextView trackTimePositionLabel;
-    private TextView trackTimeRemainingLabel;
+    private TextView trackDurationLabel;
     private View previousTrackButton;
     private View trackPlayButton;
     private View trackPauseButton;
@@ -60,9 +60,9 @@ public class PlayerFragment extends DialogFragment {
         albumnNameLabel = (TextView) root.findViewById(R.id.player_text_album);
         trackNameLabel = (TextView) root.findViewById(R.id.player_text_track);
         trackAlbumArtImage = (ImageView) root.findViewById(R.id.player_image_album_art);
-        trackDurationBar = (ProgressBar) root.findViewById(R.id.player_progress_track_duration);
+        trackDurationBar = (SeekBar) root.findViewById(R.id.player_progress_track_duration);
         trackTimePositionLabel = (TextView) root.findViewById(R.id.player_text_time_position);
-        trackTimeRemainingLabel = (TextView) root.findViewById(R.id.player_text_time_remaining);
+        trackDurationLabel = (TextView) root.findViewById(R.id.player_text_duration);
         previousTrackButton = root.findViewById(R.id.player_button_previous);
         trackPlayButton = root.findViewById(R.id.player_button_play);
         trackPauseButton = root.findViewById(R.id.player_button_pause);
@@ -90,8 +90,15 @@ public class PlayerFragment extends DialogFragment {
         trackNameLabel.setText(track.getName());
         bindArt(track.getAlbumArtUrls());
         trackDurationBar.setMax(track.getDuration().toApproximateMillis());
-        trackTimePositionLabel.setText("00:00");
-        trackTimeRemainingLabel.setText(track.getDuration().asMmSs());
+        trackDurationBar.setOnSeekBarChangeListener(
+                new SeekBarProgressChangeListener() {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        trackTimePositionLabel.setText(String.valueOf(progress)); // TODO
+                    }
+                }
+        );
+        trackDurationLabel.setText(track.getDuration().asMmSs());
         previousTrackButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override

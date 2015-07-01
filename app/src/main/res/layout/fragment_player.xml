@@ -31,9 +31,8 @@
     android:layout_height="wrap_content"
     tools:text="It's a beautiful day" />
 
-  <ProgressBar
+  <SeekBar
     android:id="@+id/player_progress_track_duration"
-    style="@android:style/Widget.ProgressBar.Horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
 
@@ -78,7 +77,7 @@
       android:src="@android:drawable/ic_media_next" />
 
     <TextView
-      android:id="@+id/player_text_time_remaining"
+      android:id="@+id/player_text_duration"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       tools:text="0:30" />
