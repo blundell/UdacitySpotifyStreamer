@@ -104,6 +104,7 @@ public class PlayerFragment extends DialogFragment {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(v.getContext(), "PREVIOUS", Toast.LENGTH_SHORT).show();
+                        // TODO inform activity we want the previous track
                     }
                 });
         nextTrackButton.setOnClickListener(
@@ -111,6 +112,7 @@ public class PlayerFragment extends DialogFragment {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(v.getContext(), "NEXT", Toast.LENGTH_SHORT).show();
+                        // TODO inform activity we want the next track
                     }
                 });
         trackPlayButton.setOnClickListener(
@@ -120,6 +122,7 @@ public class PlayerFragment extends DialogFragment {
                         v.setVisibility(View.GONE);
                         trackPauseButton.setVisibility(View.VISIBLE);
                         Toast.makeText(v.getContext(), "PLAY", Toast.LENGTH_SHORT).show();
+                        // TODO use MediaPlayer to play the track
                     }
                 });
         trackPauseButton.setOnClickListener(
@@ -129,6 +132,7 @@ public class PlayerFragment extends DialogFragment {
                         v.setVisibility(View.GONE);
                         trackPlayButton.setVisibility(View.VISIBLE);
                         Toast.makeText(v.getContext(), "PAUSE", Toast.LENGTH_SHORT).show();
+                        // TODO use MediaPlayer to pause the track
                     }
                 });
     }
